@@ -1,0 +1,21 @@
+opam-version: "2.0"
+maintainer: "Liang Wang <ryanrhymes@gmail.com>"
+authors: [ "Liang Wang" ]
+license: "MIT"
+homepage: "https://github.com/owlbarn/owl"
+dev-repo: "git+https://github.com/owlbarn/owl.git"
+bug-reports: "https://github.com/owlbarn/owl/issues"
+doc: "https://owlbarn.github.io/owl/"
+synopsis: "Owl-Plplot: thin plotting layer for Owl based on plplot"
+
+build: [
+  [ "dune" "subst" ] {pinned}
+  [ "dune" "build" "-p" name "-j" jobs ]
+]
+
+depends: [
+  "ocaml" {>= "4.10.0"}
+  "dune" {>= "2.0.0"}
+  "owl" {>= "1.2"}
+  "plplot"
+]
