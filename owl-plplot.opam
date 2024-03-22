@@ -19,3 +19,13 @@ depends: [
   "owl" {>= "1.2"}
   "plplot"
 ]
+
+pin-depends: [
+  [
+    "owl-base" "git+https://github.com/owlbarn/owl"
+  ]
+  [
+    "owl" "git+https://github.com/owlbarn/owl"
+  ]
+]
+
