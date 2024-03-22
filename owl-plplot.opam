@@ -16,7 +16,7 @@ build: [
 depends: [
   "ocaml" {>= "4.10.0"}
   "dune" {>= "2.0.0"}
-  "owl" {>= "1.2"}
+  "owl" {>= "1.0"}
   "plplot"
 ]
 
