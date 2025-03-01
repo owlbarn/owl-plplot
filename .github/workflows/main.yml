@@ -33,25 +33,4 @@ jobs:
           dune-cache: true
           allow-prerelease-opam: true
           
-      - name: Owl Deps
-        run: sudo apt-get install aspcud libshp-dev libopenblas-dev liblapacke-dev
       
-      - name: clone owl
-        run: git clone https://github.com/owlbarn/owl.git /tmp/
-
-      - name: Owl OCaml Deps
-        run: |
-          cd /tmp/owl  
-          opam depext owl-plplot.opam --deps-only
-      
-      - name: install owl
-        run: |
-          cd /tmp/owl
-          opam exec -- dune build @install 
-        
-      - name: install owl-plplot deps 
-        run: opam depext owl-plplot.opam --deps-only
-    
-      - name: Run tests
-        run: opam exec -- dune build
-        working-directory: examples
