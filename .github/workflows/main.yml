@@ -31,21 +31,21 @@ jobs:
       - name: Owl Deps
         run: sudo apt-get install aspcud libshp-dev libopenblas-dev liblapacke-dev
       
-      - name: clone owl
+      - name: Clone owl
         run: git clone https://github.com/owlbarn/owl.git /tmp/owl
 
       - name: Owl OCaml Deps
         run: |
           cd /tmp/owl  
-          opam depext owl-plplot.opam --deps-only
+          opam install ocaml-compiler-libs alcotest conf-openblas ctypes dune-configurator stdio npy odoc
       
-      - name: install owl
+      - name: Install owl
         run: |
           cd /tmp/owl
           opam exec -- dune build @install 
         
-      - name: install owl-plplot deps 
-        run: opam depext owl-plplot.opam --deps-only
+      - name: Install owl-plplot deps 
+        run: opam install plplot
     
       - name: Run tests
         run: opam exec -- dune build
