@@ -10,13 +10,9 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          # - macos-14 # beta runner for macos arm64
-          - macos-latest
           - ubuntu-latest
-          # - windows-latest
         ocaml-compiler:
-          - "5.1"
-          - "4.14"
+          - 5
 
     runs-on: ${{ matrix.os }}
 
@@ -25,7 +21,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Use OCaml ${{ matrix.ocaml-compiler }}
-        uses: ocaml/setup-ocaml@v2
+        uses: ocaml/setup-ocaml@v3
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
           opam-local-packages: |
