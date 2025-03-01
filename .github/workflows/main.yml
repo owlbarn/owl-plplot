@@ -35,7 +35,7 @@ jobs:
 
       - name: Create and Set OPAM Switch
         run: |
-          opam switch create owl-switch 5.1
+          opam switch create owl-switch 5.1.0
           eval $(opam env)  # Load the new switch
       
       - name: Clone owl
