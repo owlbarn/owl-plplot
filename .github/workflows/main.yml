@@ -28,8 +28,10 @@ jobs:
         uses: ocaml/setup-ocaml@v2
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
-          opam-local-packages: |
-            *.opam
+          #opam-local-packages: |
+          #  *.opam
+          dune-cache: true
+          allow-prerelease-opam: true
           
       - name: Owl Deps
         run: sudo apt-get install aspcud libshp-dev libopenblas-dev liblapacke-dev
