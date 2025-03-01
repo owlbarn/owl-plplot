@@ -1,0 +1,14 @@
+(executables
+ (names
+  mesh)
+ (libraries owl owl_plplot)
+ (flags ; in order to make the examples compile correctly even with the warnings.
+  (:standard
+   -warn-error
+   -unused-value-declaration
+   -warn-error
+   -unused-var-strict
+   -warn-error
+   -unused-var
+   -warn-error
+   -unused-field)))

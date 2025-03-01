@@ -1334,7 +1334,7 @@ let pie ?(h = _default_handle) ?(spec = []) x =
   _adjust_range h ~margin:0.1 [| -1.; 1. |] X;
   _adjust_range h ~margin:0.1 [| -1.; 1. |] Y;
   let x = Owl_dense_matrix.D.to_array x in
-  let x = Owl_stats.normlise_pdf x in
+  let x = Owl_stats.normalise_pdf x in
   (* prepare the closure *)
   let p = h.pages.(h.current_page) in
   let color = _get_rgb spec p.fgcolor in

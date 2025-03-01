@@ -2,3 +2,7 @@
  (name owl_plplot)
  (public_name owl-plplot)
  (libraries owl plplot))
+
+(env
+  (dev
+    (flags (:standard -w -69))))
