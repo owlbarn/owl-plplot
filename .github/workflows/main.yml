@@ -1,4 +1,4 @@
-name: Main workflow
+name: Install and Compile
 
 on:
   - pull_request
@@ -10,13 +10,13 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-latest
           # - macos-14 # beta runner for macos arm64
-          # - macos-latest
+          - macos-latest
+          - ubuntu-latest
           # - windows-latest
         ocaml-compiler:
           - "5.1"
-          # - "4.14"
+          - "4.14"
 
     runs-on: ${{ matrix.os }}
 
@@ -28,9 +28,9 @@ jobs:
         uses: ocaml/setup-ocaml@v2
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
-          #opam-local-packages: |
-          #  *.opam
-          dune-cache: true
-          allow-prerelease-opam: true
+          opam-local-packages: |
+            *.opam
+
+      - run: opam depext owl-plplot --with-test
           
       
