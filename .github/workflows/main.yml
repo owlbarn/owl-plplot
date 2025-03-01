@@ -12,8 +12,8 @@ jobs:
         os:
           - ubuntu-latest
         ocaml-compiler:
-          - 5
-          #- "5.1"
+          # - 5
+          - "5.1"
 
     runs-on: ${{ matrix.os }}
 
@@ -27,6 +27,8 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
           opam-local-packages: |
             *.opam
+          dune-cache: true
+          allow-prerelease-opam: true
       
       - name: Owl Deps
         run: sudo apt-get install aspcud libshp-dev libopenblas-dev liblapacke-dev
