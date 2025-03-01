@@ -32,7 +32,7 @@ jobs:
         run: sudo apt-get install aspcud libshp-dev libopenblas-dev liblapacke-dev
       
       - name: clone owl
-        run: git clone https://github.com/owlbarn/owl.git /tmp/
+        run: git clone https://github.com/owlbarn/owl.git /tmp/owl
 
       - name: Owl OCaml Deps
         run: |
