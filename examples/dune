@@ -20,3 +20,8 @@
    -unused-var
    -warn-error
    -unused-field)))
+
+
+; TEMP HACK: 
+; If the compiler is not able to link to a library properly, perhaps you can specify the path to the library:
+; LD_PRELOAD=/lib/x86_64-linux-gnu/libpthread.so.0 _build/default/examples/function.exe
