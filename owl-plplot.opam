@@ -1,11 +1,11 @@
-opam-version: "2.0"
+opam-version: "2.3"
 maintainer: "Liang Wang <ryanrhymes@gmail.com>"
 authors: [ "Liang Wang" ]
 license: "MIT"
-homepage: "https://github.com/owlbarn/owl"
-dev-repo: "git+https://github.com/owlbarn/owl.git"
-bug-reports: "https://github.com/owlbarn/owl/issues"
-doc: "https://owlbarn.github.io/owl/"
+homepage: "https://github.com/owlbarn/owl-plplot"
+dev-repo: "git+https://github.com/owlbarn/owl-plplot.git"
+bug-reports: "https://github.com/owlbarn/owl-plplot/issues"
+doc: "https://owlbarn.github.io/owl-plplot/"
 synopsis: "Owl-Plplot: thin plotting layer for Owl based on plplot"
 
 build: [

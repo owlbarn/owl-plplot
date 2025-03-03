@@ -1,0 +1,6 @@
+## 1.1 (2025-03-03)
+
+* Separate from main owl project
+* Add new examples for visualization using owl-plplot
+* Add building and installation script 
+* Add automatic building and installation check with Action workflow
