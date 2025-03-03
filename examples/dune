@@ -1,6 +1,14 @@
 (executables
  (names
-  mesh)
+  box
+  function
+  lines
+  mesh
+  scatter
+  stem
+  subplot
+  surf
+  )
  (libraries owl owl_plplot)
  (flags ; in order to make the examples compile correctly even with the warnings.
   (:standard

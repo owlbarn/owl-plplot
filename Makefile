@@ -5,9 +5,9 @@ all: build
 build:
 	dune build @install
 
-.PHONY: test
-test:
-	dune runtest -j 1 --no-buffer -p owl
+.PHONY: examples
+examples:
+	cd examples && dune build
 
 .PHONY: clean
 clean:
