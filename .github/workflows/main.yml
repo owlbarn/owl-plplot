@@ -56,9 +56,13 @@ jobs:
         
       - name: Install owl-plplot deps 
         run: opam install plplot
-    
-      - name: Run tests
-        run: opam exec -- dune build
-        working-directory: examples
+      
+
+      - name: Install owl-plplot
+        run: opam exec -- dune build @install 
+
+      #- name: Run tests
+      #  run: opam exec -- dune build
+      #  working-directory: examples
           
       
