@@ -53,6 +53,7 @@ jobs:
         run: |
           cd /tmp/owl
           opam exec -- dune build @install 
+          eval $(opam env)
         
       - name: Install owl-plplot deps 
         run: opam install plplot
