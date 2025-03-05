@@ -1,4 +1,4 @@
-name: Install on Ubuntu
+name: Install on Mac
 
 on:
   - pull_request
@@ -10,10 +10,10 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-latest
+          - macos-latest
         ocaml-compiler:
-          - "5.2"
-          - "4.14"
+          - "5.1"
+          # - "4.14"
 
     runs-on: ${{ matrix.os }}
 
@@ -29,6 +29,16 @@ jobs:
             *.opam
           dune-cache: true
           allow-prerelease-opam: true
+
+      - name: macos fix
+        run: |
+          brew update
+          brew upgrade
+          brew install pkgconf
+        # work around https://github.com/actions/runner-images/issues/10984
+
+      - name: Owl Deps
+        run: brew install aspcud libshp-dev libopenblas-dev liblapacke-dev
       
       - name: Initialize OPAM
         run: opam init --disable-sandboxing --yes
@@ -41,9 +51,6 @@ jobs:
       - name: Clone owl
         run: git clone https://github.com/owlbarn/owl.git /tmp/owl
       
-      - name: Owl Deps
-        run: sudo apt-get install aspcud libshp-dev libopenblas-dev liblapacke-dev
-
       - name: Owl OCaml Deps
         run: |
           cd /tmp/owl  
@@ -56,7 +63,7 @@ jobs:
           eval $(opam env)
         
       - name: Install owl-plplot deps 
-        run: opam install plplot owl # install owl is a temp hack to the error in finding the installed version
+        run: opam install plplot # owl # install owl is a temp hack to the error in finding the installed version
       
 
       - name: Install owl-plplot
@@ -66,4 +73,3 @@ jobs:
         run: opam exec -- dune build
         working-directory: examples
           
-      
