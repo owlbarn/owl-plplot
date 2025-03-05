@@ -48,20 +48,21 @@ jobs:
           opam switch create owl-switch 5.1.0
           eval $(opam env)  # Load the new switch
       
-      - name: Clone owl
-        run: git clone https://github.com/owlbarn/owl.git /tmp/owl
+      #- name: Clone owl
+      #  run: git clone https://github.com/owlbarn/owl.git /tmp/owl
       
-      - name: Owl OCaml Deps
-        run: |
-          cd /tmp/owl  
-          opam install ocaml-compiler-libs alcotest ctypes dune-configurator stdio npy odoc 
-        # conf-openblas
+      #- name: Owl OCaml Deps
+      #  run: |
+      #    cd /tmp/owl  
+      #    opam install ocaml-compiler-libs alcotest ctypes dune-configurator stdio npy odoc 
+      # # conf-openblas
       
       - name: Install owl
-        run: |
-          cd /tmp/owl
-          opam exec -- dune build @install 
-          eval $(opam env)
+        #run: |
+        #  cd /tmp/owl
+        #  opam exec -- dune build @install 
+        #  eval $(opam env)
+        run : opam install owl 
         
       - name: Install owl-plplot deps 
         run: opam install plplot # owl # install owl is a temp hack to the error in finding the installed version
