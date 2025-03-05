@@ -38,7 +38,7 @@ jobs:
         # work around https://github.com/actions/runner-images/issues/10984
 
       - name: Owl Deps
-        run: brew install aspcud libshp openblas lapack
+        run: brew install aspcud openblas lapack
 
       - name: Initialize OPAM
         run: opam init --disable-sandboxing --yes
