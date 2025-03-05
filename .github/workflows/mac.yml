@@ -54,7 +54,8 @@ jobs:
       - name: Owl OCaml Deps
         run: |
           cd /tmp/owl  
-          opam install ocaml-compiler-libs alcotest conf-openblas ctypes dune-configurator stdio npy odoc
+          opam install ocaml-compiler-libs alcotest ctypes dune-configurator stdio npy odoc 
+        # conf-openblas
       
       - name: Install owl
         run: |
